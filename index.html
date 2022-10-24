@@ -51,7 +51,8 @@
     </section>
 
     <script type="text/javascript">
-      $.getJSON("JSONS/messengerTest.json", function(json) {
+      $(document).ready(() => {
+        var json = require('./messengerTest.json');
         console.log(json);
       })
     </script>
