@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-  
+    <button id="buttonThem">Them</button><button id="buttonMe">Me</button>
     <header class="contact">
       <section class="contact--details">
           <h1 class="contact--details__name online">Ida</h1>
@@ -18,6 +18,18 @@
     </header>
     <section class="messages">
         <section>
+          <h3 class="msg--date">Yesterday - 08:17</h3>
+          <div class="msg msg--them">
+              <blockquote>Grrrr WHY YOU LITTLE...</blockquote>
+          </div>
+          <div class="msg msg--me">
+              <blockquote>It was like that when I got here!</blockquote>
+          </div>
+          <div class="msg msg--them">
+              <blockquote>Hehehe, that's my boy</blockquote>
+          </div>
+        </section>
+        <section class="msg--date--today">
             <h3 class="msg--date">Today - 19:44</h3>
             <div class="msg msg--them">
               <blockquote>Hey baby</blockquote>
@@ -28,32 +40,38 @@
             <div class="msg msg--them">
                 <blockquote>He was a zombie?</blockquote>
             </div>
-        </section>
-        <section>
-            <h3 class="msg--date">Yesterday - 08:17</h3>
-            <div class="msg msg--them">
-                <blockquote>Grrrr WHY YOU LITTLE...</blockquote>
+            <div class="msg msg--next">
+              <blockquote class="answer1">Hi there</blockquote>
+              <blockquote class="answer2">whats up?</blockquote>
+              <blockquote class="answer3">hey sexy</blockquote>
             </div>
-            <div class="msg msg--me">
-                <blockquote>It was like that when I got here!</blockquote>
-            </div>
-            <div class="msg msg--them">
-                <blockquote>Hehehe, that's my boy</blockquote>
-            </div>
-        </section>
-        <section>
-          <div class="msg msg--next">
-            <blockquote>Hi there</blockquote>
-            <blockquote>whats up?</blockquote>
-            <blockquote>hey sexy</blockquote>
-          </div>
         </section>
     </section>
 
     <script type="text/javascript">
       $(document).ready(() => {
-        var json = require('./messengerTest.json');
-        console.log(json);
+        let messengerjson = <?php include 'messengerTest.json'; ?>;
+        console.log(messengerjson);
+
+        $("#buttonThem").click(() => {
+          $(".msg--date--today").append("<div class='msg msg--them'><blockquote>them</blockquote></div>");
+        });
+        $("#buttonMe").click(() => {
+          $(".msg--date--today").append("<div class='msg msg--me'><blockquote>me</blockquote></div>");
+        });
+
+        $(".answer1").click(() => {
+          $(".msg--next").html("");
+          $(".msg--date--today").append("<div class='msg msg--me'><blockquote>Hi there</blockquote></div>");
+        });
+        $(".answer2").click(() => {
+          $(".msg--next").html("");
+          $(".msg--date--today").append("<div class='msg msg--me'><blockquote>whats up?</blockquote></div>");
+        });
+        $(".answer3").click(() => {
+          $(".msg--next").html("");
+          $(".msg--date--today").append("<div class='msg msg--me'><blockquote>hey sexy</blockquote></div>");
+        });
       })
     </script>
     <style>
