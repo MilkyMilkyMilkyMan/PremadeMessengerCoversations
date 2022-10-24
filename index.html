@@ -51,16 +51,9 @@
     </section>
 
     <script type="text/javascript">
-      function selectFile() {
-        var uploadedFile = document.getElementById('myFile').value;
-        //var s = JSON.stringify(uploadedFile);
-        //document.getElementById('fileResult').innerHTML = s;
-        // var fileBlob = new Blob(uploadedFile);
-        // var reader = new FileReader();
-        // reader.readAsText(fileBlob);
-        console.log(uploadedFile);
-      }
-
+      $.getJSON("JSONS/messengerTest.json", function(json) {
+        console.log(json);
+      })
     </script>
     <style>
       body {
