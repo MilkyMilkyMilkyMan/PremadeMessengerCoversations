@@ -8,9 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
     <title>Messenger</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+  </head> 
   <body>
-    <button id="buttonThem">Them</button><button id="buttonMe">Me</button>
     <header class="contact">
       <section class="contact--details">
           <h1 class="contact--details__name online">Ida</h1>
@@ -50,15 +49,8 @@
 
     <script type="text/javascript">
       $(document).ready(() => {
-        let messengerjson = <?php include 'messengerTest.json'; ?>;
+        let messengerjson = <?php include 'messengerTest.json';?>;
         console.log(messengerjson);
-
-        $("#buttonThem").click(() => {
-          $(".msg--date--today").append("<div class='msg msg--them'><blockquote>them</blockquote></div>");
-        });
-        $("#buttonMe").click(() => {
-          $(".msg--date--today").append("<div class='msg msg--me'><blockquote>me</blockquote></div>");
-        });
 
         $(".answer1").click(() => {
           $(".msg--next").html("");
